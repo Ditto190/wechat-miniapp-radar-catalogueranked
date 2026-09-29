@@ -4,6 +4,8 @@ import { findAlternativeResources, getResources } from "@/lib/resources";
 import { buildResourceTimeline } from "@/lib/resource-timeline";
 import { getResourceScoreTrace } from "@/lib/score-trace";
 
+export const revalidate = 300;
+
 export async function GET(_request: Request, context: { params: Promise<{ id: string }> }) {
   const { id } = await context.params;
   const resources = await getResources();

@@ -35,6 +35,8 @@ function parseType(value: string | undefined): ResourceType | "all" | undefined 
     : undefined;
 }
 
+export const revalidate = 300;
+
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const resources = await getResources();
